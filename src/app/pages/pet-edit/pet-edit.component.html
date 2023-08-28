@@ -1,0 +1,17 @@
+<section class="pet-edit">
+    <h2>{{'Add'}} pet</h2>
+    <form #form="ngForm" (ngSubmit)="onSavePet()">
+        <label for="name">Name</label>
+        <input [(ngModel)]="pet.name"  type="text" name="name" id="name" #name="ngModel">
+
+        <label for="age">Age</label>
+        <input [(ngModel)]="pet.age"  type="number" name="age" id="age">
+
+        <label for="birthDate">Birth Date</label>
+        <input [ngModel]="pet.birthDate|date:'yyyy-MM-dd'" (ngModelChange)="onHandleBirthDate($event)"  type="date" name="birthDate" id="birthDate">
+
+        <button>Save</button>
+    </form>
+
+    <a routerLink="/">Back</a>
+</section>

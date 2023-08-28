@@ -1,0 +1,11 @@
+<section *ngIf="pet$ | async as pet" class="pet-details">
+    <p><b>Name:</b> {{pet.name}}</p>
+    <p><b>Age:</b> {{pet.age}}</p>
+    <p><b>birthDate:</b> {{pet.birthDate|date:'d/M/yyyy'}}</p>
+    <img src="https://robohash.org/{{pet._id}}?set=set4" alt="">
+    <section class="actions">
+        <button (click)="onShouldAdoptPet()" class="adopt-btn">Should Adopt?</button>
+        <button (click)="onBack()" class="back-btn">Back</button>
+    </section>
+    <span *ngIf="ans">{{ans}}</span>
+</section>
